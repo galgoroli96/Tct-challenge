@@ -1,0 +1,11 @@
+@import "./variables";
+
+.btn {
+  all: unset;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  &.btnDefault {
+    border: 1px solid $default;
+  }
+}
