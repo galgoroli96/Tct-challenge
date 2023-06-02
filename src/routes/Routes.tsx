@@ -7,7 +7,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/post/:id" element={<PostDetailsPage />} />
+      <Route path="/posts/:id" element={<PostDetailsPage />} />
       <Route path="*" element={<Navigate to="/error/404" />} />
       <Route path="/error/404" element={<Page404 />} />
     </Routes>
