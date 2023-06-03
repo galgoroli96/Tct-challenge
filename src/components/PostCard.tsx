@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import "../styles/postCard.scss";
 
 interface IPostProps {
+  className?: string;
   post: PostType;
 }
-function PostCard({ post }: IPostProps) {
+function PostCard({ className, post }: IPostProps) {
   const [author, setAuthor] = useState<AuthorType | null>();
   const navigate = useNavigate();
 
@@ -16,7 +17,10 @@ function PostCard({ post }: IPostProps) {
   }, [post]);
 
   return (
-    <div className="postCard" onClick={() => navigate(`/posts/${post.id}`)}>
+    <div
+      className={`${className} postCard`}
+      onClick={() => navigate(`/posts/${post.id}`)}
+    >
       <div className="cardHeader">
         <img src={AppService.getImagePlaceholder(post.title)} alt="postImg" />
       </div>

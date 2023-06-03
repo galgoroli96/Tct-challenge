@@ -35,7 +35,11 @@ function HomePage() {
             <>
               <section className="postContainer">
                 {filteredPosts.map((item: PostType) => (
-                  <PostCard key={`post_${item.id}`} post={item} />
+                  <PostCard
+                    key={`post_${item.id}`}
+                    post={item}
+                    className="filteredPost"
+                  />
                 ))}
               </section>
             </>

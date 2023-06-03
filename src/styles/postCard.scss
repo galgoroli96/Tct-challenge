@@ -11,7 +11,7 @@
   &:hover {
     transform: scale(1.05, 1.05);
   }
-  &:nth-child(9n + 1) {
+  &:not(.filteredPost):nth-child(9n + 1) {
     width: 710px;
     .cardHeader img {
       width: 710px;
