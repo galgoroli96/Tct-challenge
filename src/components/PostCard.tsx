@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AuthorType, PostType } from "../common/helpers/types";
 import AppService from "../services/AppService";
 import { useNavigate } from "react-router-dom";
-import "../styles/postCard.scss";
+import "../styles/post.scss";
 
 interface IPostProps {
   className?: string;

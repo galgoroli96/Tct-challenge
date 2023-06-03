@@ -1,0 +1,131 @@
+@import "./variables";
+
+.postCard {
+  width: 345px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05, 1.05);
+  }
+  &:not(.filteredPost):not(.featuredPosts):nth-child(9n + 1) {
+    width: 710px;
+    .cardHeader img {
+      width: 710px;
+      max-height: 400px;
+    }
+    .cardBody h2 {
+      max-width: 100%;
+    }
+  }
+  .cardHeader {
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  .cardBody {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    h2 {
+      margin: 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 320px;
+      height: 35px;
+      white-space: nowrap;
+    }
+  }
+  .cardFooter {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: auto;
+  }
+}
+
+.featuredPostCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 345px;
+  &:not(:last-child) {
+    border-bottom: 1px dotted $default;
+  }
+  cursor: pointer;
+  img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .cardContent {
+    padding: 0 10px;
+    h2 {
+      margin: 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 300px;
+      height: 35px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.authorIcon {
+  padding: 4px 12px;
+  border-radius: 25px;
+  margin-right: 10px;
+  background: $tagColor;
+  color: $white;
+}
+
+// postDetails
+.detailsSection {
+  margin: 30px 0;
+  h1 {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0 auto 20px auto;
+  }
+  img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+  }
+  .authorContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin: 20px 0;
+  }
+}
+.postDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  .commentsAndDescSection {
+    .description {
+      border-bottom: 1px solid $default;
+      padding-bottom: 20px;
+    }
+    h2 {
+      margin-top: 20px;
+    }
+  }
+  .featuredPosts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .title {
+      font-size: 28px;
+      line-height: 32px;
+      margin: 0 0 20px 0;
+    }
+  }
+}

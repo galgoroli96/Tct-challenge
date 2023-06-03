@@ -10,6 +10,13 @@ export type AuthorType = {
     name: string;
 }
 
+export type CommentsType = {
+    id: number;
+    name: string;
+    email: string;
+    body: string;
+}
+
 export type FilterContextType = {
     filter: string;
     updateFilter: (value: string) => void;
