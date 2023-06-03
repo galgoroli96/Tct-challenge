@@ -5,3 +5,10 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+.noResult {
+  font-size: 16px;
+  line-height: 18px;
+  span {
+    font-weight: 600;
+  }
+}
