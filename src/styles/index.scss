@@ -21,7 +21,11 @@ header {
   align-items: center;
   flex-direction: row;
   margin-bottom: 2rem;
-  img {
-    height: 50px;
+  .logoContainer {
+    display: contents;
+    cursor: pointer;
+    img {
+      height: 50px;
+    }
   }
 }

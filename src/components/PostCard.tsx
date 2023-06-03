@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AuthorType, PostType } from "../common/helpers/types";
 import AppService from "../services/AppService";
 import { useNavigate } from "react-router-dom";
+import "../styles/postCard.scss";
 
 interface IPostProps {
   post: PostType;
@@ -15,21 +16,23 @@ function PostCard({ post }: IPostProps) {
   }, [post]);
 
   return (
-    <article className="postCard" onClick={() => navigate(`/posts/${post.id}`)}>
-      <figure>
+    <div className="postCard" onClick={() => navigate(`/posts/${post.id}`)}>
+      <div className="cardHeader">
         <img src={AppService.getImagePlaceholder(post.title)} alt="postImg" />
-      </figure>
-      <div className="content">
+      </div>
+      <div className="cardBody">
         <h2>{post.title}</h2>
         <p>{post.body}</p>
+      </div>
+      <div className="cardFooter">
         {author && (
-          <div className="author">
+          <>
             <span className="authorIcon">{author.name[0] || "#"}</span>
             <span className="authorName">{author.name}</span>
-          </div>
+          </>
         )}
       </div>
-    </article>
+    </div>
   );
 }
 
