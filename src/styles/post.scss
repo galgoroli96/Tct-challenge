@@ -1,4 +1,4 @@
-@import "./variables";
+@import "./global";
 
 .postCard {
   width: 345px;
@@ -8,14 +8,48 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   cursor: pointer;
+  @include mediaLaptopL {
+    width: 335px;
+  }
+  @include mediaLaptop {
+    width: 245px;
+  }
+  @include mediaTablet {
+    width: 355px;
+  }
+  @include mediaMobileCustom640 {
+    width: 100%;
+  }
   &:hover {
     transform: scale(1.05, 1.05);
+    @include mediaTabletLandscape {
+      transform: inherit;
+    }
   }
   &:not(.filteredPost):not(.featuredPosts):nth-child(9n + 1) {
     width: 710px;
+    @include mediaLaptopL {
+      width: 690px;
+    }
+    @include mediaLaptop {
+      width: 515px;
+    }
+    @include mediaTablet {
+      width: 730px;
+    }
+    @include mediaMobileCustom640 {
+      width: 100%;
+    }
     .cardHeader img {
       width: 710px;
       max-height: 400px;
+      @include mediaTablet {
+        width: 100%;
+        max-height: 300px;
+      }
+      @include mediaMobileCustom640 {
+        width: 640px;
+      }
     }
     .cardBody h2 {
       max-width: 100%;
@@ -26,6 +60,9 @@
       display: block;
       max-width: 100%;
       object-fit: cover;
+      @include mediaMobileCustom640 {
+        width: 640px;
+      }
     }
   }
   .cardBody {
@@ -55,6 +92,9 @@
   flex-direction: column;
   gap: 10px;
   width: 345px;
+  @include mediaCustom810 {
+    width: 375px;
+  }
   &:not(:last-child) {
     border-bottom: 1px dotted $default;
   }
@@ -109,6 +149,9 @@
   display: flex;
   flex-direction: row;
   gap: 30px;
+  @include mediaCustom810 {
+    flex-direction: column;
+  }
   .commentsAndDescSection {
     .description {
       border-bottom: 1px solid $default;
@@ -119,9 +162,16 @@
     }
   }
   .featuredPosts {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    .postContainer {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 20px;
+      @include mediaCustom810 {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
     .title {
       font-size: 28px;
       line-height: 32px;

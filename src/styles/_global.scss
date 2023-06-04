@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 .btn {
   all: unset;
@@ -31,4 +32,16 @@
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
+  // @include mediaLaptopL {
+  //   max-width: 1200px;
+  // }
+  @include mediaLaptopM {
+    max-width: 1045px;
+  }
+  @include mediaLaptop {
+    max-width: 860px;
+  }
+  @include mediaTablet {
+    max-width: 730px;
+  }
 }
