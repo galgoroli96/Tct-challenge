@@ -23,10 +23,13 @@ function PostDetailsPage() {
         );
       });
       AppService.getComments(params.id).then((comm) => setComments(comm.data));
+      AppService.getPosts().then((resp) => {
+        const filtered = resp.data.filter(
+          (post: PostType) => post.id.toString() !== params.id
+        );
+        setFeaturedPosts(filtered.splice(0, 4));
+      });
     }
-    AppService.getPosts().then((resp) =>
-      setFeaturedPosts(resp.data.splice(0, 4))
-    );
   }, [params.id]);
 
   return (
@@ -55,9 +58,11 @@ function PostDetailsPage() {
         </section>
         <div className="featuredPosts">
           <h2 className="title">Featured posts</h2>
-          {featuredPosts.map((item: PostType) => (
-            <FeaturedPostCard key={`post_${item.id}`} post={item} />
-          ))}
+          <div className="postContainer">
+            {featuredPosts.map((item: PostType) => (
+              <FeaturedPostCard key={`post_${item.id}`} post={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

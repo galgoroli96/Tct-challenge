@@ -1,9 +1,11 @@
 import React, { useCallback } from "react";
 import "../styles/searchBar.scss";
 import { useFilter } from "../context/FilterContext";
+import { useLocation } from "react-router-dom";
 
 function SearchBar() {
   const { filter, updateFilter } = useFilter();
+  const location = useLocation();
 
   const handleInputChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,6 +21,10 @@ function SearchBar() {
     updateFilter("");
     // eslint-disable-next-line
   }, []);
+
+  if (location.pathname !== "/") {
+    return <></>;
+  }
 
   return (
     <div className="searchBar">
