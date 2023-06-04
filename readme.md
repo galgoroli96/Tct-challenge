@@ -25,9 +25,9 @@ This app created with [React](https://reactjs.org) + [TypeScript](https://www.ty
 
 ## Other command(s)
 
-- Run build
+- Run production preview
   ```bash
-  yarn build
+  yarn preview
   ```
 
 ## Recommended VS Code extensions
